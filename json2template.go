@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strings"
 	"text/template"
 
 	"github.com/moul/funcmap"
@@ -31,9 +32,13 @@ func json2template(c *cli.Context) error {
 		if err != nil {
 			panic(err)
 		}
-		tmplSource, err = ioutil.ReadFile(os.Args[1])
-		if err != nil {
-			panic(err)
+		if strings.Contains(os.Args[1], "{{") {
+			tmplSource = []byte(os.Args[1])
+		} else {
+			tmplSource, err = ioutil.ReadFile(os.Args[1])
+			if err != nil {
+				panic(err)
+			}
 		}
 		break
 	case 3:
@@ -43,9 +48,13 @@ func json2template(c *cli.Context) error {
 			panic(err)
 		}
 
-		tmplSource, err = ioutil.ReadFile(os.Args[2])
-		if err != nil {
-			panic(err)
+		if strings.Contains(os.Args[2], "{{") {
+			tmplSource = []byte(os.Args[2])
+		} else {
+			tmplSource, err = ioutil.ReadFile(os.Args[2])
+			if err != nil {
+				panic(err)
+			}
 		}
 		break
 	default:
