@@ -1,0 +1,9 @@
+{
+    "id": "abcdef",
+    "age": 42,
+    "tags": [
+        "aaa",
+        "bbb",
+        "ccc"
+    ]
+}
