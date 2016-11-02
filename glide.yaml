@@ -1,0 +1,5 @@
+package: github.com/moul/json2template
+import:
+- package: github.com/moul/funcmap
+- package: github.com/urfave/cli
+  version: ~1.18.1
