@@ -2,6 +2,8 @@ package funcmap
 
 import (
 	"encoding/json"
+	"fmt"
+	"strconv"
 	"strings"
 	"text/template"
 )
@@ -23,4 +25,11 @@ var FuncMap = template.FuncMap{
 	"title": strings.Title,
 	"lower": strings.ToLower,
 	"upper": strings.ToUpper,
+	"int": func(v interface{}) string {
+		a, err := strconv.Atoi(v.(string))
+		if err != nil {
+			return fmt.Sprintf("%v", v)
+		}
+		return fmt.Sprintf("%d", a)
+	},
 }

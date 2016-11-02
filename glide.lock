@@ -1,8 +1,8 @@
 hash: b6ac97975e5e736efe00a8c51559f2b8a5b7fd36eb3804eed812f1fc9bb2cba4
-updated: 2016-11-02T19:59:28.213297638+01:00
+updated: 2016-11-02T20:48:51.842475053+01:00
 imports:
 - name: github.com/moul/funcmap
-  version: 916897fb9db8a358561b3c2cdb7bd4d7cf2eb1c7
+  version: 004d6da56ef4644fd4409af07cc85e5e5edb4947
 - name: github.com/urfave/cli
   version: a14d7d367bc02b1f57d88de97926727f2d936387
 testImports: []
