@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"text/template"
 
-	"github.com/moul/advanced-ssh-config/pkg/templates"
+	"github.com/moul/funcmap"
 	"github.com/urfave/cli"
 )
 
@@ -51,7 +52,7 @@ func json2template(c *cli.Context) error {
 		return fmt.Errorf("Invalid usage")
 	}
 
-	tmpl, err := templates.New(string(tmplSource))
+	tmpl, err := template.New("").Funcs(funcmap.FuncMap).Parse(string(tmplSource))
 	if err != nil {
 		panic(err)
 	}
